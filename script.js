@@ -4,6 +4,7 @@ let loader = document.querySelector('#loader');
 
 const getWeather = (cityName) => {
     if (cityName) {
+        loader.style.color = 'white';
         loader.innerText = 'loading...';
         loader.style.opacity = '1';
         btnGet.disabled = true;
@@ -18,16 +19,22 @@ const getWeather = (cityName) => {
                 document.querySelector('.city').textContent = data.name;
                 document.querySelector('.temp').innerHTML = Math.round(data.main.temp - 273) + '&deg';
                 document.querySelector('.weather').textContent = data.weather[0]['description'];
-                document.querySelector('.icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png">`;
+                // document.querySelector('.icon').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png">`;
+                let val = `https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png`;
+                $('#icon').attr('src', val);
             })
             .catch(function () {
-                // console.log('Ошибка 404')
-                document.querySelector('.city').textContent = 'error';
+                console.log('Ошибка 404')
+                document.querySelector('#loader').textContent = 'error';
+                loader.style.opacity = '1';
+                loader.style.color = 'red';
+                loader.style.fontSize = '30px';
+
             })
     }
     else {
-        // console.log('Please enter city')
         loader.style.color = 'red';
+        loader.style.fontSize = '30px';
         loader.style.opacity = '1';
         loader.innerText = 'Please enter city';
 
@@ -54,5 +61,6 @@ btnGet.addEventListener('click', function () {
     getWeather(cityName)
 
 })
+
 
 
