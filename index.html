@@ -10,27 +10,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
 </head>
-<body>
-    
+<body> 
     <div class="container">
         <div class="btns" >
-            <input class='inp' placeholder="   Enter city" type="text">
+            <input list="slct" class='inp address' placeholder="   Enter city" type="text">
+             <datalist id='slct'>
+                 <option>Moscow
+                <option>Saint Petersburg
+                 <option>Tel Aviv
+                 <option>New York
+             </datalist>
+
             <button class="btn">&#128269;</button> 
             <p id="loader">load</p>
          </div>
          <!-- btns -->
         
          <!-- heading -->
-        
 
         <div class="wthr">
             <p class="city">city</p>
-
+            <p class="now">now</p>
             <p class="temp"> temp&deg</p>
-            <!-- <div class="icon"> icon</div> -->
             <div class="icon"> <img id="icon"></div>
             <p class="weather">weather</p>
-
         </div>
         <!-- wthr-item -->
         

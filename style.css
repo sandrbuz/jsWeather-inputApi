@@ -3,18 +3,22 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  background: rgb(58, 58, 58);
+}
 #loader {
+  opacity: 0;
   height: 50px;
   margin-top: 20px;
   margin-bottom: 20px;
   font-family: "Noto Sans KR", sans-serif;
 }
 .container {
-  max-width: 1000px;
+  border-radius: 5px;
+  max-width: 800px;
   height: 100vh;
   margin: auto;
-  /* border: 1px solid black; */
-  background-color: deepskyblue;
+  background-color: white;
 }
 .weather {
   font-size: 40px;
@@ -22,12 +26,14 @@
   color: white;
 }
 .wthr {
+  background: rgb(0, 169, 110);
+  /* background: rgb(221, 221, 221); */
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
+
   margin: auto;
   border: 3px solid white;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 500px;
   height: 700px;
   text-align: center;
@@ -40,16 +46,16 @@
   color: white;
   font-family: "Noto Sans KR", sans-serif;
 }
+.now {
+  color: white;
+  font-family: "Noto Sans KR", sans-serif;
+}
 .temp {
   font-size: 40px;
   margin-bottom: 0px;
   margin-top: 50px;
   color: white;
 }
-/* .img {
-  width: 400px;
-  height: 400px;
-} */
 .btns {
   text-align: center;
   padding-top: 30px;
@@ -59,12 +65,14 @@
   margin: 0 10px;
 }
 .inp {
+  background: rgb(220, 219, 219);
   border-radius: 20px;
   border: blanchedalmond;
   width: 250px;
   height: 30px;
 }
 .btn {
+  background: rgb(220, 219, 219);
   border-radius: 20px;
   border: blanchedalmond;
   width: 50px;
