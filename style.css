@@ -16,7 +16,7 @@ body {
 .container {
   border-radius: 5px;
   max-width: 800px;
-  height: 100vh;
+  height: 150vh;
   margin: auto;
   background-color: white;
 }
@@ -98,18 +98,34 @@ body {
     font-size: 25px;
   }
 }
-@media (max-width: 355px) {
+@media (max-width: 376px) {
   .wthr {
     width: 300px;
     height: 600px;
   }
   .city {
-    font-size: 40px;
+    font-size: 30px;
+    margin-top: -10px;
+  }
+  .now {
+    font-size: 15px;
+    margin-top: -10px;
   }
   .temp {
     margin-top: 10px;
   }
+  #icon {
+    width: 150px;
+  }
   .weather {
-    font-size: 25px;
+    font-size: 20px;
+  }
+  #loader {
+    margin-top: 5px;
+    margin-bottom: 1px;
+    font-size: 5px;
+  }
+  .btns {
+    padding-top: 10px;
   }
 }
