@@ -1,6 +1,9 @@
 
 let btnGet = document.querySelector('.btn');
 let loader = document.querySelector('#loader');
+let btnFahr = document.querySelector('.fahr');
+let btnCels = document.querySelector('.celsius');
+
 
 const getWeather = (cityName) => {
     if (cityName) {
@@ -16,12 +19,35 @@ const getWeather = (cityName) => {
                 btnGet.disabled = false;
 
 
+
+
+
+
+
                 document.querySelector('.city').textContent = data.name;
                 document.querySelector('.now').textContent = 'now';
                 document.querySelector('.temp').innerHTML = Math.round(data.main.temp - 273) + '&deg';
                 document.querySelector('.weather').textContent = data.weather[0]['description'];
                 let val = `https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png`;
                 $('#icon').attr('src', val);
+
+
+
+
+                btnFahr.addEventListener('click', function () {
+                    document.querySelector('.temp').innerHTML = Math.round(data.main.temp) + '&#8457;';
+                    btnFahr.disabled = true;
+                    btnCels.disabled = false;
+
+                });
+                btnCels.addEventListener('click', function () {
+                    document.querySelector('.temp').innerHTML = Math.round(data.main.temp - 273) + '&deg';
+                    btnCels.disabled = true;
+                    btnFahr.disabled = false;
+
+                });
+
+
             })
             .catch(function () {
                 document.querySelector('.city').textContent = '________';

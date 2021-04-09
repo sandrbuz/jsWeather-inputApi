@@ -49,11 +49,32 @@ body {
   color: white;
   font-family: "Noto Sans KR", sans-serif;
 }
+.celsius {
+  width: 100px;
+  height: 30px;
+  border-radius: 7px;
+  margin-left: 40px;
+  margin-top: 8px;
+}
 .temp {
   font-size: 40px;
   margin-bottom: 0px;
-  margin-top: 50px;
+  /* margin-top: 50px;
+  margin-left: 230px; */
   color: white;
+}
+.temperature {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.fahr {
+  margin-right: 40px;
+  margin-top: 7px;
+  font-family: "Noto Sans KR", sans-serif;
+  border-radius: 7px;
+  width: 100px;
+  height: 30px;
 }
 .btns {
   text-align: center;
@@ -97,8 +118,11 @@ body {
   .city {
     font-size: 40px;
   }
-  .temp {
-    margin-top: 10px;
+  .fahr {
+    height: 40px;
+  }
+  .celsius {
+    height: 40px;
   }
   .weather {
     font-size: 25px;
@@ -121,10 +145,18 @@ body {
     font-size: 15px;
     margin-top: -10px;
   }
-  .temp {
+  /* .temp {
     margin-top: 10px;
+    margin-left: 135px;
+  } */
+  .celsius {
+    /* margin-top: 10px; */
+    font-size: 13px;
   }
-
+  .fahr {
+    /* margin-top: 10px; */
+    font-size: 13px;
+  }
   .weather {
     font-size: 20px;
   }
