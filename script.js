@@ -8,7 +8,7 @@ let temperature = document.querySelector('.temperature');
 
 const getWeather = (cityName) => {
     if (cityName) {
-        loader.style.color = 'black';
+        loader.style.color = '#5f5e5e';
         loader.innerText = 'loading...';
         loader.style.opacity = '1';
         btnGet.disabled = true;
@@ -54,9 +54,7 @@ const getWeather = (cityName) => {
 
 
                 temperature.style.display = 'none';
-                // btnCels.disabled = true;
-                // btnFahr.disabled = true;
-                // document.querySelector('.wthr').innerHTML = '_________';
+
                 document.querySelector('.city').textContent = '________';
                 document.querySelector('.temp').textContent = '';
                 document.querySelector('.weather').textContent = '';

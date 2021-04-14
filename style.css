@@ -14,10 +14,11 @@ body {
   font-family: "Noto Sans KR", sans-serif;
 }
 .container {
-  padding-top: 50px;
+  padding-bottom: 200px;
+  padding-top: 100px;
   border-radius: 5px;
   max-width: 800px;
-  height: 220vh;
+  height: 200%;
   margin: auto;
   background-color: white;
 }
@@ -34,7 +35,7 @@ body {
   flex-direction: column;
   margin: auto;
   border: 3px solid white;
-  border-radius: 10px;
+  border-radius: 15px;
   width: 500px;
   height: 730px;
   text-align: center;
@@ -54,6 +55,7 @@ body {
   font-family: "Noto Sans KR", sans-serif;
 }
 .celsius {
+  background-color: white;
   width: 100px;
   height: 30px;
   border-radius: 7px;
@@ -73,6 +75,7 @@ body {
   margin-top: 30px;
 }
 .fahr {
+  background-color: white;
   margin-right: 40px;
   margin-top: 7px;
   font-family: "Noto Sans KR", sans-serif;
@@ -116,6 +119,7 @@ body {
 
 @media (max-width: 500px) {
   .wthr {
+    margin-top: -90px;
     width: 350px;
     height: 600px;
   }
@@ -132,14 +136,20 @@ body {
     font-size: 25px;
     margin-top: -70px;
   }
+  .temp {
+    margin: 0 10px;
+  }
 }
 @media (max-width: 350px) {
   /* 355 */
   .wthr {
+    margin-top: 10px;
     width: 300px;
     max-height: 500px;
   }
   .container {
+    padding-bottom: 50px;
+    padding-top: 10px;
     max-height: 150vh;
   }
   .city {
@@ -167,6 +177,7 @@ body {
     font-size: 20px;
   }
   #icon {
+    margin-top: -30px;
     width: 200px;
   }
   #loader {
@@ -176,5 +187,8 @@ body {
   }
   .btns {
     padding-top: 10px;
+  }
+  .temp {
+    margin: 0 10px;
   }
 }
