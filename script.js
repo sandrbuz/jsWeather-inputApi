@@ -22,8 +22,12 @@ const getWeather = (cityName) => {
                 // btns temp
                 btnCels.disabled = true;
                 btnFahr.disabled = false;
+                btnCels.style.backgroundColor = 'rgb(145, 145, 145)';
+                btnFahr.style.backgroundColor = 'rgb(220, 219, 219)';
 
 
+
+                // basic weather data
                 temperature.style.display = 'flex';
                 document.querySelector('.city').textContent = data.name;
                 document.querySelector('.now').textContent = 'now';
@@ -34,22 +38,27 @@ const getWeather = (cityName) => {
 
 
 
-                // btns temp func
+                // btns temp funcns
                 btnFahr.addEventListener('click', function () {
                     document.querySelector('.temp').innerHTML = Math.round(data.main.temp) + '&#8457;';
                     btnFahr.disabled = true;
                     btnCels.disabled = false;
+                    btnFahr.style.backgroundColor = 'rgb(145, 145, 145)';
+                    btnCels.style.backgroundColor = 'rgb(220, 219, 219)';
 
                 });
                 btnCels.addEventListener('click', function () {
                     document.querySelector('.temp').innerHTML = Math.round(data.main.temp - 273) + '&#8451;';
                     btnCels.disabled = true;
                     btnFahr.disabled = false;
+                    btnCels.style.backgroundColor = 'rgb(145, 145, 145)';
+                    btnFahr.style.backgroundColor = 'rgb(220, 219, 219)';
 
                 });
 
 
             })
+            // on error
             .catch(function () {
 
 
@@ -66,6 +75,8 @@ const getWeather = (cityName) => {
                 loader.style.fontSize = '30px';
             })
     }
+
+    // if city is not entered
     else {
         loader.style.color = 'red';
         loader.style.fontSize = '30px';
@@ -77,6 +88,7 @@ const getWeather = (cityName) => {
 
 
 
+// default city
 getWeather('Moscow');
 
 
