@@ -6,6 +6,11 @@ let btnCels = document.querySelector('.celsius');
 let temperature = document.querySelector('.temperature');
 
 
+
+
+
+
+
 const getWeather = (cityName) => {
     if (cityName) {
         loader.style.color = '#5f5e5e';
@@ -88,6 +93,7 @@ const getWeather = (cityName) => {
 
 
 
+
 // default city
 getWeather('Moscow');
 
@@ -95,6 +101,8 @@ getWeather('Moscow');
 
 
 
+
+// On btnGet
 let userInput = document.querySelector('.inp');
 btnGet.addEventListener('click', function () {
     const cityName = userInput.value;
@@ -102,6 +110,15 @@ btnGet.addEventListener('click', function () {
 
 })
 
+
+// on key Press (Enter)
+userInput.onkeypress = function (event) {
+
+    if (event.key == 'Enter') {
+        const cityName = userInput.value;
+        getWeather(cityName)
+    }
+}
 
 
 
