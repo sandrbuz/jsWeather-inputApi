@@ -29,6 +29,7 @@ const getWeather = (cityName) => {
                 btnFahr.disabled = false;
                 btnCels.style.backgroundColor = 'rgb(145, 145, 145)';
                 btnFahr.style.backgroundColor = 'rgb(220, 219, 219)';
+                btnFahr.style.boxShadow = '0 0 10px 0px rgb(109, 108, 108)';
 
 
 
@@ -50,6 +51,8 @@ const getWeather = (cityName) => {
                     btnCels.disabled = false;
                     btnFahr.style.backgroundColor = 'rgb(145, 145, 145)';
                     btnCels.style.backgroundColor = 'rgb(220, 219, 219)';
+                    btnCels.style.boxShadow = '0 0 10px 0px rgb(109, 108, 108)';
+                    btnFahr.style.boxShadow = 'none';
 
                 });
                 btnCels.addEventListener('click', function () {
@@ -58,6 +61,8 @@ const getWeather = (cityName) => {
                     btnFahr.disabled = false;
                     btnCels.style.backgroundColor = 'rgb(145, 145, 145)';
                     btnFahr.style.backgroundColor = 'rgb(220, 219, 219)';
+                    btnFahr.style.boxShadow = '0 0 10px 0px rgb(109, 108, 108)';
+                    btnCels.style.boxShadow = 'none';
 
                 });
 
