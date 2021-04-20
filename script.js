@@ -17,6 +17,16 @@ const getWeather = (cityName) => {
         loader.innerText = 'loading...';
         loader.style.opacity = '1';
         btnGet.disabled = true;
+
+
+        document.querySelector('.btn').style.display = 'none';
+        document.querySelector('.inp').style.display = 'none';
+        temperature.style.display = 'none';
+        document.querySelector('.city').textContent = '________';
+        document.querySelector('.temp').textContent = '';
+        document.querySelector('.weather').textContent = '';
+        document.querySelector('.now').textContent = '';
+        $('#icon').attr('src', '');
         fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=655fdcf1aed1280abf8e870e95b28149`)
             .then(resp => resp.json())
             .then(data => {
@@ -24,12 +34,20 @@ const getWeather = (cityName) => {
                 loader.style.opacity = '0';
                 btnGet.disabled = false;
 
+
+
+                // Inp
+
+                document.querySelector('.btn').style.display = 'inline-block';
+                document.querySelector('.inp').style.display = 'inline-block';
+
                 // btns temp
                 btnCels.disabled = true;
                 btnFahr.disabled = false;
                 btnCels.style.backgroundColor = 'rgb(145, 145, 145)';
                 btnFahr.style.backgroundColor = 'rgb(220, 219, 219)';
                 btnFahr.style.boxShadow = '0 0 10px 0px rgb(109, 108, 108)';
+
 
 
 
@@ -54,6 +72,7 @@ const getWeather = (cityName) => {
                     btnCels.style.boxShadow = '0 0 10px 0px rgb(109, 108, 108)';
                     btnFahr.style.boxShadow = 'none';
 
+
                 });
                 btnCels.addEventListener('click', function () {
                     document.querySelector('.temp').innerHTML = Math.round(data.main.temp - 273) + '&#8451;';
@@ -73,7 +92,6 @@ const getWeather = (cityName) => {
 
 
                 temperature.style.display = 'none';
-
                 document.querySelector('.city').textContent = '________';
                 document.querySelector('.temp').textContent = '';
                 document.querySelector('.weather').textContent = '';

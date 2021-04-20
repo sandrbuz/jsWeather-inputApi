@@ -61,6 +61,7 @@ body {
   border-radius: 7px;
   margin-left: 40px;
   margin-top: 8px;
+  cursor: pointer;
 }
 .temp {
   font-size: 40px;
@@ -73,6 +74,7 @@ body {
   margin-top: 30px;
 }
 .fahr {
+  cursor: pointer;
   color: rgb(58, 58, 58);
   /* color: rgb(150, 149, 149); */
 
@@ -104,6 +106,7 @@ body {
   padding-left: 10px;
 }
 .btn {
+  cursor: pointer;
   position: absolute;
   background: rgb(220, 219, 219);
   border-radius: 0px 10px 10px 0;
