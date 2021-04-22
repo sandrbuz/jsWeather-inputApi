@@ -14,6 +14,10 @@ body {
   font-family: "Noto Sans KR", sans-serif;
 }
 .container {
+  background-size: 100% 100%;
+  background-image: url("img/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
   padding-bottom: 200px;
   padding-top: 100px;
   border-radius: 5px;
@@ -76,8 +80,6 @@ body {
 .fahr {
   cursor: pointer;
   color: rgb(58, 58, 58);
-  /* color: rgb(150, 149, 149); */
-
   background-color: white;
   margin-right: 40px;
   margin-top: 7px;
@@ -94,7 +96,6 @@ body {
   margin: 0 10px;
 }
 .inp {
-  /* box-shadow: inset 0px 0px 7px rgb(58, 58, 58); */
   color: rgb(58, 58, 58);
   background: rgb(220, 219, 219);
   border-radius: 10px 0px 0px 10px;
