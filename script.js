@@ -30,7 +30,7 @@ const getWeather = (cityName) => {
         fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=655fdcf1aed1280abf8e870e95b28149`)
             .then(resp => resp.json())
             .then(data => {
-                // console.log(data);
+                console.log(data);
                 loader.style.opacity = '0';
                 btnGet.disabled = false;
 
@@ -54,7 +54,34 @@ const getWeather = (cityName) => {
                 // basic weather data
                 temperature.style.display = 'flex';
                 document.querySelector('.city').textContent = data.name;
-                document.querySelector('.now').textContent = 'now';
+                // document.querySelector('.now').textContent = 'now';
+                // ----------------------------------------------------------------------------
+                // current time
+                d = new Date();
+                localTime = d.getTime();
+                localOffset = d.getTimezoneOffset() * 60000;
+                utc = localTime + localOffset;
+                var cit = utc + (1000 * (data.timezone));
+                // var nd = new Date(cit);
+                var date = new Date(cit);
+                var h, m, s;
+                h = date.getHours();
+                m = date.getMinutes();
+                mth = date.getMonth();
+                d = date.getDate();
+
+                if (m < 10) {
+                    var correct_date = h + ':' + '0' + m;
+                } else {
+                    var correct_date = h + ':' + m;
+                }
+                // var correct_date = h + ':' + m;
+                // document.querySelector('.now').innerHTML = nd;
+                document.querySelector('.now').innerHTML = correct_date;
+
+
+                // ------------------------------------------------------------------------
+
                 document.querySelector('.temp').innerHTML = Math.round(data.main.temp - 273) + '&#8451;';
                 document.querySelector('.weather').textContent = data.weather[0]['description'];
                 let val = `https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png`;
