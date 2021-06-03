@@ -25,7 +25,7 @@ const getWeather = (cityName) => {
         document.querySelector('.city').textContent = '________';
         document.querySelector('.temp').textContent = '';
         document.querySelector('.weather').textContent = '';
-        document.querySelector('.now').textContent = '';
+        // document.querySelector('.now').textContent = '';
         $('#icon').attr('src', '');
         fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=655fdcf1aed1280abf8e870e95b28149`)
             .then(resp => resp.json())
@@ -54,15 +54,16 @@ const getWeather = (cityName) => {
                 // basic weather data
                 temperature.style.display = 'flex';
                 document.querySelector('.city').textContent = data.name;
-                // document.querySelector('.now').textContent = 'now';
+                document.querySelector('.country').textContent = data.sys.country;
+
                 // ----------------------------------------------------------------------------
                 // current time
                 d = new Date();
                 localTime = d.getTime();
                 localOffset = d.getTimezoneOffset() * 60000;
                 utc = localTime + localOffset;
-                var cit = utc + (1000 * (data.timezone));
-                // var nd = new Date(cit);
+                var cit = utc + (1000 * data.timezone);
+
                 var date = new Date(cit);
                 var h, m, s;
                 h = date.getHours();
@@ -70,13 +71,15 @@ const getWeather = (cityName) => {
                 mth = date.getMonth();
                 d = date.getDate();
 
+                let arrMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                let mo = arrMonth[mth];
+
                 if (m < 10) {
-                    var correct_date = h + ':' + '0' + m;
+                    var correct_date = h + ':' + '0' + m + ' ' + mo + ' ' + d;
                 } else {
-                    var correct_date = h + ':' + m;
+                    var correct_date = h + ':' + m + ' ' + mo + ' ' + d;
                 }
-                // var correct_date = h + ':' + m;
-                // document.querySelector('.now').innerHTML = nd;
+
                 document.querySelector('.now').innerHTML = correct_date;
 
 
@@ -122,7 +125,7 @@ const getWeather = (cityName) => {
                 document.querySelector('.city').textContent = '________';
                 document.querySelector('.temp').textContent = '';
                 document.querySelector('.weather').textContent = '';
-                document.querySelector('.now').textContent = '';
+                // document.querySelector('.now').textContent = '';
                 $('#icon').attr('src', '');
                 document.querySelector('#loader').textContent = 'City name error';
                 loader.style.opacity = '1';

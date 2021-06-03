@@ -53,18 +53,19 @@ body {
   color: white;
   font-family: "Noto Sans KR", sans-serif;
 }
-.now {
-  color: white;
+.city-wr {
+  display: flex;
+
   font-family: "Noto Sans KR", sans-serif;
+}
+.country {
+  margin: auto 0;
 }
 .celsius {
   color: rgb(58, 58, 58);
   background-color: white;
-  width: 100px;
-  height: 30px;
-  border-radius: 7px;
-  margin-left: 40px;
-  margin-top: 8px;
+  /* margin-left: 40px; */
+  /* margin-top: 8px; */
   cursor: pointer;
 }
 .temp {
